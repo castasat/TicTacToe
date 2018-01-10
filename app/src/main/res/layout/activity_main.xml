@@ -1,56 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.openyogaland.denis.tictactoe.MainActivity"
-    tools:showIn="@layout/activity_main"
-    android:id="@+id/tableLayout"
+    android:id="@+id/relativeLayout"
+    android:layout_margin="@dimen/spacer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TableRow>
-        <Button
-            android:id="@+id/northwest"
-            android:minWidth="@dimen/button_size"
-            android:minHeight="@dimen/button_size" />
-        <Button
-            android:id="@+id/north"
-            android:minWidth="@dimen/button_size"
-            android:minHeight="@dimen/button_size"/>
-        <Button
-            android:id="@+id/northeast"
-            android:minWidth="@dimen/button_size"
-            android:minHeight="@dimen/button_size"/>
-    </TableRow>
+    <FrameLayout
+        android:id="@+id/flipcoin_fragment_frame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_size"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        tools:layout="@layout/flip_coin_fragment">
+    </FrameLayout>
 
-    <TableRow>
-        <Button
-            android:id="@+id/west"
-            android:minWidth="@dimen/button_size"
-            android:minHeight="@dimen/button_size"/>
-        <Button
-            android:id="@+id/center"
-            android:minWidth="@dimen/button_size"
-            android:minHeight="@dimen/button_size"/>
-        <Button
-            android:id="@+id/east"
-            android:minWidth="@dimen/button_size"
-            android:minHeight="@dimen/button_size"/>
-    </TableRow>
+    <FrameLayout
+        android:id="@+id/tictactoe_fragment_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/flipcoin_fragment_frame"
+        tools:layout="@layout/tictactoe_fragment">
+    </FrameLayout>
 
-    <TableRow>
-        <Button
-            android:id="@+id/southwest"
-            android:minWidth="@dimen/button_size"
-            android:minHeight="@dimen/button_size"/>
-        <Button
-            android:id="@+id/south"
-            android:minWidth="@dimen/button_size"
-            android:minHeight="@dimen/button_size"/>
-        <Button
-            android:id="@+id/southeast"
-            android:minWidth="@dimen/button_size"
-            android:minHeight="@dimen/button_size"/>
-    </TableRow>
-
-</TableLayout>
+</RelativeLayout>

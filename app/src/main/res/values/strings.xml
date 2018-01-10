@@ -3,4 +3,7 @@
     <string name="tie">It\'s a Tie! Nobody wins!</string>
     <string name="win">You Win the game!</string>
     <string name="lose">You Lose the game!</string>
+    <string name="flip_coin_message">Now we shall flip a coin! %nWhat do you choose?</string>
+    <string name="heads">Heads</string>
+    <string name="tails">Tails</string>
 </resources>

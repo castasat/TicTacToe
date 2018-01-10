@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/flip_coin_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/flip_coin_message"
+        android:textSize="18sp" />
+
+    <Space
+        android:id="@+id/spacer"
+        android:layout_width="@dimen/spacer"
+        android:layout_height="@dimen/spacer"
+        android:layout_below="@id/flip_coin_textview"
+        android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/heads_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/flip_coin_textview"
+            android:layout_toStartOf="@id/spacer"
+            android:layout_toLeftOf="@id/spacer"
+            android:text="@string/heads" />
+
+        <Button
+            android:id="@+id/tails_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/flip_coin_textview"
+            android:layout_toEndOf="@id/spacer"
+            android:layout_toRightOf="@id/spacer"
+            android:text="@string/tails" />
+
+</RelativeLayout>

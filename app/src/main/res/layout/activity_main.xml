@@ -12,16 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/button_size"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        tools:layout="@layout/flip_coin_fragment">
+        android:layout_centerHorizontal="true">
     </FrameLayout>
 
     <FrameLayout
         android:id="@+id/tictactoe_fragment_frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/flipcoin_fragment_frame"
-        tools:layout="@layout/tictactoe_fragment">
+        android:layout_below="@id/flipcoin_fragment_frame">
     </FrameLayout>
 
 </RelativeLayout>

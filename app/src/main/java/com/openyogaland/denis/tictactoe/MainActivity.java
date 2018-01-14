@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements OnFlipCoinListener
 {
   // транзакция фрагментов
   FragmentTransaction transaction;
@@ -29,4 +29,16 @@ public class MainActivity extends AppCompatActivity
     transaction.commit();
   }
   
+  // случайное целое число из диапазона от minInt до maxInt включительно
+  static int getRandomInt(int min, int max)
+  {
+    return (int) (min + (Math.round(Math.random()) * (max - min)));
+  }
+  
+  @Override
+  public void onFlipCoin(boolean isPlayerFirst)
+  {
+    // начинаем игру, передавая в неё информацию, кто ходит первым
+    ticTacToeFragment.gameStart(isPlayerFirst);
+  }
 }

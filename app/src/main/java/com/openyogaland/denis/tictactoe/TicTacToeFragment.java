@@ -11,7 +11,12 @@ import android.widget.Toast;
 
 public class TicTacToeFragment extends Fragment implements OnClickListener
 {
+  // view для отображения фрагмента
   View view;
+  // символы, которыми игрок и оппонент совершают свой ход
+  String playerMark, opponentMark;
+  // ходит ли первым игрок
+  boolean isPlayerFirst;
   
   // массив int, содержащий id кнопок игровых полей
   int[] fields = {R.id.NW, R.id.N, R.id.NE, R.id.W, R.id.C, R.id.E, R.id.SW, R.id.S, R.id.SE};
@@ -38,12 +43,16 @@ public class TicTacToeFragment extends Fragment implements OnClickListener
       switch(view.getId())
       {
         case R.id.C:
+          // TODO
           break;
         case R.id.N:
+          // TODO
           break;
         case R.id.NW:
+          // TODO
           break;
       }
+      // TODO move String value to resources
       gameOver("Restarting game");
     }
   }
@@ -55,6 +64,7 @@ public class TicTacToeFragment extends Fragment implements OnClickListener
       buttons[i] = view.findViewById(fields[i]); // находим кнопки по id
       buttons[i].setOnClickListener(this);       // задаём для кнопок слушателя нажатий
       buttons[i].setText("");                    // задаём для кнопок пустую начальную маркировку
+      buttons[i].setClickable(false);            // запрещаем в начале игры нажимать на поля игры
     }
   }
   
@@ -63,7 +73,11 @@ public class TicTacToeFragment extends Fragment implements OnClickListener
   {
     // выводим сообщение с результатом завершения игры
     Toast.makeText(getActivity(), string, Toast.LENGTH_SHORT).show();
-    // стартуем новую игру
-    gameInit(view);
+  }
+  
+  public void gameStart(boolean isPlayerFirst)
+  {
+    this.isPlayerFirst = isPlayerFirst;
+    // TODO стартовать игру в зависимости от того, кто ходит первым
   }
 }

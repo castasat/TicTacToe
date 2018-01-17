@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements OnFlipCoinListene
   // фрагменты
   FlipCoinFragment  flipCoinFragment;
   TicTacToeFragment ticTacToeFragment;
+  // TODO add restart game fragment
   
   // первый метод, вызываемый при создании андроид-активности
   protected void onCreate(Bundle savedInstanceState)
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements OnFlipCoinListene
     return (int) (min + (Math.round(Math.random()) * (max - min)));
   }
   
+  // если монета подброшена, передаём результат в ticTactoeFragment
   @Override
   public void onFlipCoin(boolean isPlayerFirst)
   {

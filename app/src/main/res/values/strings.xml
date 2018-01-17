@@ -8,4 +8,7 @@
     <string name="tails">Tails</string>
     <string name="player_first">Player moves first!</string>
     <string name="opponent_first">Opponent moves first!</string>
+    <string name="player_move_text">Your move!</string>
+    <string name="x">Х</string>
+    <string name="o">O</string>
 </resources>

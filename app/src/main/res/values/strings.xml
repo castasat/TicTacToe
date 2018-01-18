@@ -11,4 +11,7 @@
     <string name="player_move_text">Your move!</string>
     <string name="x">Х</string>
     <string name="o">O</string>
+    <string name="player_text">PLAYER:</string>
+    <string name="opponent_text">OPPONENT:</string>
+    <string name="restart_the_game">Restart the game</string>
 </resources>

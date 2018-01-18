@@ -1,4 +1,5 @@
 <resources>
     <dimen name="button_size">108dp</dimen>
     <dimen name="spacer">24dp</dimen>
+    <dimen name="zero_dp">0dp</dimen>
 </resources>

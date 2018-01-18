@@ -93,7 +93,7 @@ public class FlipCoinFragment extends Fragment implements OnClickListener
   boolean flipCoin()
   {
     // получаем результат броска монеты в виде boolean
-    int result = MainActivity.getRandomInt(0, 1);
+    int result = MainActivity.getRandomInt();
     
     if (result == 0)
     {

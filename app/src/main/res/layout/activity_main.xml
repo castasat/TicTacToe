@@ -7,19 +7,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <FrameLayout
-        android:id="@+id/flipcoin_fragment_frame"
+    <LinearLayout
+        android:id="@+id/container"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/button_size"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
-    </FrameLayout>
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/tictactoe_fragment_frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/flipcoin_fragment_frame">
+        android:layout_below="@id/container">
     </FrameLayout>
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.openyogaland.denis.tictactoe;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -24,6 +25,8 @@ public class TicTacToeFragment extends Fragment implements OnClickListener
   
   // view для отображения фрагмента
   View view;
+  // слушатель события отображения счёта игроков
+  OnShowScoreListener onShowScoreListener;
   // ходит ли первым игрок
   boolean isPlayerFirst;
   // символы, которыми игрок и оппонент совершают свой ход
@@ -48,14 +51,24 @@ public class TicTacToeFragment extends Fragment implements OnClickListener
     view = inflater.inflate(R.layout.tictactoe_fragment, container, false);
     gameInit(view);
     // возвращаем фрагмент в виде элемента View
+  
+    // устанавливаем переданные через Bundle значение
+    Bundle bundle = getArguments();
+    if(bundle != null)
+    {
+      if (playerScore != 0 && opponentScore !=0)
+      {
+        playerScore   = bundle.getInt("playerScore");
+        opponentScore = bundle.getInt("opponentScore");
+      }
+    }
+    
     return view;
   }
   
   // инициализируем игру
   private void gameInit(View view)
   {
-    playerScore   = 0;
-    opponentScore = 0;
     freeButtonCount = buttons.length;
     preferredOpponentMove = -1;
     
@@ -67,6 +80,13 @@ public class TicTacToeFragment extends Fragment implements OnClickListener
     }
     // запрещаем в начале игры нажимать на кнопки
     lockButtons();
+  }
+  
+  public void restartGame(int playerScore, int opponentScore)
+  {
+    this.playerScore   = playerScore;
+    this.opponentScore = opponentScore;
+    gameInit(view);
   }
   
   // стартуем игру (вызывается из MainActivity)
@@ -523,8 +543,24 @@ public class TicTacToeFragment extends Fragment implements OnClickListener
   // завершение игры
   void gameOver()
   {
+    // идщкируем кнопки от нажатия
     lockButtons();
-    // TODO отображение счёта игроков
-    // TODO рестарт игры
+    onShowScoreListener.onShowScore(playerScore, opponentScore);
+  }
+  
+  // метод прикрепления фрагмента к контексту (активности)
+  @Override
+  public void onAttach(Context context)
+  {
+    super.onAttach(context);
+    
+    try
+    {
+      onShowScoreListener = (OnShowScoreListener) context;
+    }
+    catch(ClassCastException e)
+    {
+      throw new ClassCastException(context.toString() + " should implement OnShowScoreListener interface");
+    }
   }
 }

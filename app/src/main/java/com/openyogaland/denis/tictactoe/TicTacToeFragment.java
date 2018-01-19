@@ -333,80 +333,115 @@ public class TicTacToeFragment extends Fragment implements OnClickListener
       opponentAlredyMadeMove = true;
     }
   
-    // делаем наиболее выгодный ход, исходя из расположения
-    // проверяем занят ли центр
-    if(!opponentAlredyMadeMove && !playerMark.equals(buttons[C].getText()) && !opponentMark
-        .equals(buttons[C].getText()))
+    // запускаем цикл поиска подходящего свободного поля для оппонента
+    while(!opponentAlredyMadeMove)
     {
-      buttons[C].setText(opponentMark);
-      opponentAlredyMadeMove = true;
+      // нужно выбрать одно поле из 25:
+      // одно поле центральное с весом 9 (диапазон от 1 до 9)
+      // 4 поля угловых с весом 3 (диапазон от 10 до 21)
+      // 4 поля крестовых с весом 1 (диапазон от 22 до 25)
+      int opponentChoice = getRandomInt(1, 25);
+      
+      // центр
+      if (opponentChoice < 10 && opponentChoice > 0)
+      {
+        // проверяем занят ли центр
+        if(!playerMark.equals(buttons[C].getText()) && !opponentMark
+            .equals(buttons[C].getText()))
+        {
+          buttons[C].setText(opponentMark);
+          opponentAlredyMadeMove = true;
+        }
+      }
+      
+      // углы
+      if (opponentChoice < 22 && opponentChoice > 9)
+      {
+        if (opponentChoice > 9 && opponentChoice < 13)
+        {
+          // NW
+          if(!playerMark.equals(buttons[NW].getText()) && !opponentMark
+              .equals(buttons[NW].getText()))
+          {
+            buttons[NW].setText(opponentMark);
+            opponentAlredyMadeMove = true;
+          }
+        }
+        if (opponentChoice > 12 && opponentChoice < 16)
+        {
+          // NE
+          if(!playerMark.equals(buttons[NE].getText()) && !opponentMark
+              .equals(buttons[NE].getText()))
+          {
+            buttons[NE].setText(opponentMark);
+            opponentAlredyMadeMove = true;
+          }
+        }
+        if (opponentChoice > 15 && opponentChoice < 19)
+        {
+          // SW
+          if(!playerMark.equals(buttons[SW].getText()) && !opponentMark
+              .equals(buttons[SW].getText()))
+          {
+            buttons[SW].setText(opponentMark);
+            opponentAlredyMadeMove = true;
+          }
+        }
+        if (opponentChoice > 18 && opponentChoice < 22)
+        {
+          // SE
+          if(!playerMark.equals(buttons[SE].getText()) && !opponentMark
+              .equals(buttons[SE].getText()))
+          {
+            buttons[SE].setText(opponentMark);
+            opponentAlredyMadeMove = true;
+          }
+        }
+      }
+      
+      // оставшиеся четыре поля
+      if (opponentChoice == 22)
+      {
+        // N
+        if(!playerMark.equals(buttons[N].getText()) && !opponentMark
+            .equals(buttons[N].getText()))
+        {
+          buttons[N].setText(opponentMark);
+          opponentAlredyMadeMove = true;
+        }
+      }
+      if (opponentChoice == 23)
+      {
+        // W
+        if(!playerMark.equals(buttons[W].getText()) && !opponentMark
+            .equals(buttons[W].getText()))
+        {
+          buttons[W].setText(opponentMark);
+          opponentAlredyMadeMove = true;
+        }
+      }
+      if (opponentChoice == 24)
+      {
+        // E
+        if(!playerMark.equals(buttons[E].getText()) && !opponentMark
+            .equals(buttons[E].getText()))
+        {
+          buttons[E].setText(opponentMark);
+          opponentAlredyMadeMove = true;
+        }
+      }
+      if (opponentChoice == 25)
+      {
+        // S
+        if(!playerMark.equals(buttons[S].getText()) && !opponentMark
+            .equals(buttons[S].getText()))
+        {
+          buttons[S].setText(opponentMark);
+          opponentAlredyMadeMove = true;
+        }
+      }
     }
   
-    // проверяем, заняты ли углы
-    // NW
-    if(!opponentAlredyMadeMove && !playerMark.equals(buttons[NW].getText()) && !opponentMark
-        .equals(buttons[NW].getText()))
-    {
-      buttons[NW].setText(opponentMark);
-      opponentAlredyMadeMove = true;
-    }
-  
-    // NE
-    if(!opponentAlredyMadeMove && !playerMark.equals(buttons[NE].getText()) && !opponentMark
-        .equals(buttons[NE].getText()))
-    {
-      buttons[NE].setText(opponentMark);
-      opponentAlredyMadeMove = true;
-    }
-  
-    // SW
-    if(!opponentAlredyMadeMove && !playerMark.equals(buttons[SW].getText()) && !opponentMark
-        .equals(buttons[SW].getText()))
-    {
-      buttons[SW].setText(opponentMark);
-      opponentAlredyMadeMove = true;
-    }
-  
-    // SE
-    if(!opponentAlredyMadeMove && !playerMark.equals(buttons[SE].getText()) && !opponentMark
-        .equals(buttons[SE].getText()))
-    {
-      buttons[SE].setText(opponentMark);
-      opponentAlredyMadeMove = true;
-    }
-    
-    // проверяем, заняты ли поля креста
-    // N
-    if(!opponentAlredyMadeMove && !playerMark.equals(buttons[N].getText()) && !opponentMark
-        .equals(buttons[N].getText()))
-    {
-      buttons[N].setText(opponentMark);
-      opponentAlredyMadeMove = true;
-    }
-  
-    // W
-    if(!opponentAlredyMadeMove && !playerMark.equals(buttons[W].getText()) && !opponentMark
-        .equals(buttons[W].getText()))
-    {
-      buttons[W].setText(opponentMark);
-      opponentAlredyMadeMove = true;
-    }
-  
-    // E
-    if(!opponentAlredyMadeMove && !playerMark.equals(buttons[E].getText()) && !opponentMark
-        .equals(buttons[E].getText()))
-    {
-      buttons[E].setText(opponentMark);
-      opponentAlredyMadeMove = true;
-    }
-  
-    // S
-    if(!opponentAlredyMadeMove && !playerMark.equals(buttons[S].getText()) && !opponentMark
-        .equals(buttons[S].getText()))
-    {
-      buttons[S].setText(opponentMark);
-    }
-    
     // уменьшаем количество свободных полей
     freeButtonCount--;
     
@@ -562,5 +597,11 @@ public class TicTacToeFragment extends Fragment implements OnClickListener
     {
       throw new ClassCastException(context.toString() + " should implement OnShowScoreListener interface");
     }
+  }
+  
+  // метод, возвращающий случайное целое из диапазона
+  public int getRandomInt(int min, int max)
+  {
+    return (int) (min + Math.round(Math.random() * (max - min)));
   }
 }

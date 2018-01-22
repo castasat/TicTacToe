@@ -10,9 +10,9 @@ public class MainActivity extends AppCompatActivity implements OnFlipCoinListene
                                                                OnRestartGameListener
 {
   // константы
-  final static String TAG_RESTART   = "restart_game";
-  final static String TAG_FLIP      = "flip_coin";
-  final static String TAG_TICTACTOE = "tictactoe";
+  final String TAG_RESTART    = "restart_game";
+  final String TAG_FLIP       = "flip_coin";
+  final String TAG_TICTACTOE  = "tictactoe";
   
   // контейнер, в котором будут заменяться фрагменты
   LinearLayout container;
@@ -103,10 +103,7 @@ public class MainActivity extends AppCompatActivity implements OnFlipCoinListene
       transaction.replace(R.id.container, this.flipCoinFragment, TAG_FLIP);
       transaction.commit();
     }
-    else
-    {
-      // TODO flipCoinFragment уже загружен
-    }
+    // else flipCoinFragment уже загружен
     
     if(ticTacToeFragment == null)
     {

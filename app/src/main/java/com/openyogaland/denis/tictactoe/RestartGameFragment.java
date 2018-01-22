@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 public class RestartGameFragment extends Fragment implements OnClickListener
 {
+  // fields
   View view;
   // счет игрока и оппонента
   int playerScore, opponentScore;

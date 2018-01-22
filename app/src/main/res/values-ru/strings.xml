@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Крестики - Нолики</string>
+    <string name="tie">Ничья!</string>
+    <string name="win">Вы выиграли!</string>
+    <string name="lose">Вы проиграли!</string>
+    <string name="flip_coin_message">Сейчас мы подбросим монетку! На что ставите?</string>
+    <string name="heads">Орёл</string>
+    <string name="tails">Решка</string>
+    <string name="player_first">Вы ходите первым!</string>
+    <string name="opponent_first">Оппонент ходит первым!</string>
+    <string name="player_move_text">Ваш ход!</string>
+    <string name="player_text">ИГРОК:</string>
+    <string name="opponent_text">ОППОНЕНТ:</string>
+    <string name="restart_the_game">Начать игру заново</string>
+</resources>
